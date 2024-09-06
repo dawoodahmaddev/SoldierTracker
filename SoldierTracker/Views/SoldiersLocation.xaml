@@ -13,6 +13,18 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Soldiers Location" FontSize="30" />
+        <TextBlock Text="Soldiers Location" FontSize="30" Background="White" />
+        <DataGrid Grid.Row="2" ItemsSource="{Binding SoldierLocations}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Solder Name" Binding="{Binding Soldier.Name}" />
+                <DataGridTextColumn Header="Country" Binding="{Binding Soldier.Country.Name}" />
+                <DataGridTextColumn Header="Rank" Binding="{Binding Soldier.Rank.Name}" />
+                <DataGridTextColumn Header="Sensor Name" Binding="{Binding Sensor.SensorName}" />
+                <DataGridTextColumn Header="Sensor Type" Binding="{Binding Sensor.SensorType}" />
+                <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}" />
+                <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </UserControl>

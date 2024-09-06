@@ -10,16 +10,27 @@ namespace SoldierTracker.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions options) : base(options)
+
+        private const string CONNECTION_STRING = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SoldierTracker;Integrated Security=True";
+
+        public ApplicationDbContext()
         {
-            
         }
+
+        //public ApplicationDbContext(DbContextOptions options) : base(options)
+        //{
+        //}
 
         public DbSet<Soldier> Soldiers { get; set; }
         public DbSet<Rank> Ranks { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Sensor> Sensors { get; set; }
         public DbSet<SoldierLocation> SoldierLocations { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(CONNECTION_STRING);
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
