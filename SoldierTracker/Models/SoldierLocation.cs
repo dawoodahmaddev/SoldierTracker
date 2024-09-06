@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoldierTracker.Models
 {
-    public class Location
+    public class SoldierLocation
     {
         public int SensorID { get; set; }
         public Sensor Sensor { get; set; }

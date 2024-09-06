@@ -9,9 +9,15 @@ namespace SoldierTracker.Models
 {
     public class Sensor
     {
+        public Sensor()
+        {
+            SoldierLocations = new HashSet<SoldierLocation>();
+        }
         [Key]
         public int SensorID { get; set; }
         public string SensorName { get; set; }
         public string SensorType { get; set; }
+
+        public ICollection<SoldierLocation> SoldierLocations { get; set; }
     }
 }
