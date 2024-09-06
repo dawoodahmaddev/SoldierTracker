@@ -21,8 +21,8 @@
                 <DataGridTextColumn Header="Rank" Binding="{Binding Soldier.Rank.Name}" />
                 <DataGridTextColumn Header="Sensor Name" Binding="{Binding Sensor.SensorName}" />
                 <DataGridTextColumn Header="Sensor Type" Binding="{Binding Sensor.SensorType}" />
-                <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}" />
                 <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}" />
+                <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}" />
             </DataGrid.Columns>
         </DataGrid>
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SoldierTracker.Services;
 using SoldierTracker.ViewModels;
 using System.Text;
 using System.Windows;
@@ -21,7 +22,9 @@ namespace SoldierTracker
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new SoldierLocationViewModel();
+            ISoldierLocationService soldierLocationService = new SoldierLocationService();
+
+            DataContext = new SoldierLocationViewModel(soldierLocationService);
         }
     }
 }
